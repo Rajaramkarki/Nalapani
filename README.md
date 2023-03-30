@@ -4,15 +4,18 @@
 The project is a simple Unity 3D project that follows the player through the events that occured during the battle of Nalapani
 
 What does our Game Have?
+
 Well it's still in progress but we have managed to include following
 
 * Real-Life like Terrain
+
 The terrain is taken from real-life elevation data and implemented into Unity using heightmaps.
 
 <img width="816" alt="image" src="https://user-images.githubusercontent.com/67723187/228882945-6f068444-e8c4-43b2-9cc0-eb8a7e7bf71a.png">
 
 
 * Characters (Balbhadra Kunwar for Now)
+
 For now Balbhadra Kunwar has been implemented into the game, it was a long and hard process as it was our first character
 
 The character design is first made (Its made in photoshop and its the best I could do :/)
