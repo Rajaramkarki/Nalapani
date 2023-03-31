@@ -3,11 +3,27 @@
 ## A Simple 3D role playing game based on Nepal's history of Anglo-Nepal War. Focused mainly on the battle of Nalapani
 The project is a simple Unity 3D project that follows the player through the events that occured during the battle of Nalapani
 
-Following steps will be taken in order to create the game
-* Creating a terrain
-It is done with the help of heightmaps that takes real life data and we can implement that terrain into Unity.
+What does our Game Have?
 
-![image](https://user-images.githubusercontent.com/67723187/227761764-90663ac8-03c0-4cd8-9fc2-c8b6dbeb9965.png)
+Well it's still in progress but we have managed to include following
 
-* Creating Assets for the Game
-Many simple assets is made using Blender and most will be taken from Unity's Asset Store as well.
+* Real-Life like Terrain
+
+The terrain is taken from real-life elevation data and implemented into Unity using heightmaps.
+
+<img width="816" alt="image" src="https://user-images.githubusercontent.com/67723187/228882945-6f068444-e8c4-43b2-9cc0-eb8a7e7bf71a.png">
+
+
+* Characters (Balbhadra Kunwar for Now)
+
+For now Balbhadra Kunwar has been implemented into the game, it was a long and hard process as it was our first character
+
+The character design is first made (Its made in photoshop and its the best I could do :/)
+
+![Balbhadra Model 1](https://user-images.githubusercontent.com/67723187/228883367-c7f87ae6-3cae-4982-913f-e9a211989319.png)
+
+The model somehow ended up being a little similar to the drawing (did cost like 5 days)
+
+<img width="441" alt="Screenshot 2023-03-30 201017" src="https://user-images.githubusercontent.com/67723187/228883638-95cf3a55-04ee-4428-bf7f-c0085e020ec0.png">
+
+
