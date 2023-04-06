@@ -1,14 +1,24 @@
 using UnityEngine;
 
+
+//basically contains all the common logic for all the states
 public abstract class PlayerBaseState : State
 {
     protected readonly PlayerStateMachine stateMachine;
 
+    //constructor of the class
+    //creates a PlayerStateMachine and then assigns reference to the stateMachine
     protected PlayerBaseState(PlayerStateMachine stateMachine)
     {
         this.stateMachine = stateMachine;
     }
-
+    
+    //this calculates the direction for moving the player based on the position of the camera
+    //forward is always where the camera is facing at
+    //and similarly  the left, right and back
+    //all controlled by W, A, S and D
+    //the actual movement is not done here, the values are just put into Velocity.x and Velocity.z
+    //this will be called later in Tick method so it calculated the position and velocity every frame
     protected void CalculateMoveDirection()
     {
         Vector3 cameraForward = new(stateMachine.MainCamera.forward.x, 0, stateMachine.MainCamera.forward.z);
