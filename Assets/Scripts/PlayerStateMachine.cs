@@ -12,13 +12,14 @@ public class PlayerStateMachine : StateMachine
     public Vector3 Velocity;
     public float MovementSpeed { get; private set; } = 5f;
     public float LookRotationDampFactor { get; private set; } = 10f;
+    //jump is not implemented yet -- still debugging
+    public float jumpSpeed { get; private set; } = 3f;
+
     public Transform MainCamera { get; private set; }
     public InputReader InputReader { get; private set; }
     public Animator Animator { get; private set; }
     public CharacterController Controller { get; private set; }
 
-    //jump is not implemented yet -- still debugging
-    //public float JumpForce { get; private set; } = 5f;
 
     //is called once when Unity loads the scene
     private void Start()

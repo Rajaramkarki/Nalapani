@@ -14,7 +14,7 @@ public abstract class StateMachine : MonoBehaviour
     //calls exit on the current state enters the new one
     public void SwitchState(State state)
     {
-        //Here ?. is null-conditional operator
+        //null-conditional operator is used
 
         currentState?.Exit();
         currentState = state;

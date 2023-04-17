@@ -10,7 +10,6 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
     public Vector2 MouseDelta;
     public Vector2 MoveComposite;
-
     public Action OnJumpPerformed;
 
     private Controls controls;
@@ -43,9 +42,10 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     //--
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (!context.performed)
-            return;
+        if(context.performed)
+        {
+            OnJumpPerformed?.Invoke();
+        }
 
-        OnJumpPerformed?.Invoke();
     }
 }

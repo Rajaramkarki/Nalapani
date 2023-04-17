@@ -24,11 +24,16 @@ public class PlayerMoveState : PlayerBaseState
         stateMachine.Animator.CrossFadeInFixedTime(MoveBlendTreeHash, CrossFadeDuration);
 
         //Jump not implemented, still debugging
-        //stateMachine.InputReader.OnJumpPerformed += SwitchToJumpState;
+        stateMachine.InputReader.OnJumpPerformed += SwitchtoJumpState;
     }
 
     public override void Tick()
     {
+
+        if(!stateMachine.Controller.isGrounded)
+        {
+            stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+        }
 
         //calls all these functions from PlayerBaseState     
         CalculateMoveDirection();
@@ -41,5 +46,13 @@ public class PlayerMoveState : PlayerBaseState
         stateMachine.Animator.SetFloat(MoveSpeedHash, stateMachine.InputReader.MoveComposite.sqrMagnitude > 0f ? 1f : 0f, AnimationDampTime, Time.deltaTime);
     }
 
-    public override void Exit() { }
+    public override void Exit() 
+    {
+        stateMachine.InputReader.OnJumpPerformed -= SwitchtoJumpState;
+    }
+
+    private void SwitchtoJumpState()
+    {
+        stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+    }
 }

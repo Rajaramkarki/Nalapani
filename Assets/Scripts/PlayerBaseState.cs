@@ -6,6 +6,7 @@ public abstract class PlayerBaseState : State
 {
     protected readonly PlayerStateMachine stateMachine;
 
+
     //constructor of the class
     //creates a PlayerStateMachine and then assigns reference to the stateMachine
     protected PlayerBaseState(PlayerStateMachine stateMachine)
@@ -32,6 +33,17 @@ public abstract class PlayerBaseState : State
         stateMachine.Velocity.z = moveDirection.z * stateMachine.MovementSpeed;
     }
 
+    //basic implementation for Jump 
+    //protected void Jump()
+    //{
+    //    if(!stateMachine.Controller.isGrounded || isJumping)
+    //           return;
+
+    //    isJumping = true;
+    //    stateMachine.Velocity.y = stateMachine.jumpSpeed;
+    //    stateMachine.Animator.SetTrigger("Jump");
+    //}
+
     //we face the player so that it faces the direction it is moving.
     //If we just move forward and move the camera, the player is still centered in the camera
     protected void FaceMoveDirection()
@@ -48,13 +60,16 @@ public abstract class PlayerBaseState : State
     //applies constant downward force to the player's velocity in the Y-axis
     //Compares with the Physics.gravity.y (default is -9.8)
     //Can be used for Jump action, is also used for Move
+    //If the player is jumping then apply gravity respective to the jump speed until the player reaches ground
     protected void ApplyGravity()
     {
         if (stateMachine.Velocity.y > Physics.gravity.y)
         {
             stateMachine.Velocity.y += Physics.gravity.y * Time.deltaTime;
         }
+
     }
+
 
     //the velocity calculated above is used to move in that respective direction.
     //the character controller component is used here
