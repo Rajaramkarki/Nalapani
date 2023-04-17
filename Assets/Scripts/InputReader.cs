@@ -1,3 +1,6 @@
+//related to the input actions created using new Input System - its implementation
+
+
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -37,6 +40,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         MoveComposite = context.ReadValue<Vector2>();
     }
 
+    //--
     public void OnJump(InputAction.CallbackContext context)
     {
         if (!context.performed)

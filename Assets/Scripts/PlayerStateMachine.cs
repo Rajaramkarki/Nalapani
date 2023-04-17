@@ -17,7 +17,7 @@ public class PlayerStateMachine : StateMachine
     public Animator Animator { get; private set; }
     public CharacterController Controller { get; private set; }
 
-    //jump is not implemented yet
+    //jump is not implemented yet -- still debugging
     //public float JumpForce { get; private set; } = 5f;
 
     //is called once when Unity loads the scene
